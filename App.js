@@ -1,25 +1,18 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-export default function App() {
-  return (
-    <>
-      <Text style={styles.header}>App</Text>
-      <Text style={styles.text}>HomeScreen</Text>
-    </>
-  );
-}
-
-const styles = StyleSheet.create({
-  header: {
-    textAlign: "center",
-    fontSize: 25,
-    borderBottomWidth: 1,
-    marginTop: 28,
-    borderBottomColor: "#bec4c3",
-    paddingBottom: 10
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import HomeScreen from "./src/screens/HomeScreen";
+import ComponentsScreen from "./src/screens/ComponentsScreen";
+const navigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Components: ComponentsScreen
   },
-  text: {
-    fontSize: 30
+  {
+    initialRouteName: "Components",
+    defaultNavigationOptions: {
+      title: "App"
+    }
   }
-});
+);
+
+export default createAppContainer(navigator);
