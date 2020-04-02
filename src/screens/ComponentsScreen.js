@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
-
 const ComponentsScreen = () => {
   const myDsc = "I am Prottay Rudra";
   return (
